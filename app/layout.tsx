@@ -12,7 +12,7 @@ interface Props {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-gray-800 text-white">{children}</body>
     </html>
   );
 }
