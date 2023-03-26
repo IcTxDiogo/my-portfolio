@@ -1,5 +1,9 @@
-import Link from "next/link";
+"use client";
+
+import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
+import Link from "next/link";
+
 import { NavItem } from "..";
 
 export interface HeaderProps {
@@ -8,6 +12,8 @@ export interface HeaderProps {
 }
 
 export default function Header({ pageTitle, NavItems }: HeaderProps) {
+  const pathname = usePathname();
+
   return (
     <header className="stick w-full flex justify-center p-4 border-b-2">
       <div className=" w-full flex justify-between">
@@ -15,7 +21,10 @@ export default function Header({ pageTitle, NavItems }: HeaderProps) {
         <nav>
           <ul className="flex gap-4">
             {NavItems.map((item) => (
-              <li key={item.id}>
+              <li
+                key={item.id}
+                className={`${pathname === item.url && "border-b-2"}`}
+              >
                 <Link href={item.url}>{item.label}</Link>
               </li>
             ))}

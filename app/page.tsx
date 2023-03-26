@@ -1,13 +1,12 @@
 import { v4 as uuidv4 } from "uuid";
 
-import Header, { HeaderProps } from "@/components/layout/header";
+import { HeaderProps } from "@/components/layout/header";
 import ShowTechnology from "@/components/Home/showTechnology";
-import Footer from "@/components/layout/footer";
-import Page from "@/components/layout/Page";
+import BasePage from "@/components/layout/basePage";
 
 export default function Home() {
   return (
-    <Page headerProps={headerProps}>
+    <BasePage headerProps={headerProps} isHome={true}>
       <main className="flex flex-col justify-center items-center">
         <section
           className=" w-full"
@@ -29,7 +28,7 @@ export default function Home() {
         </section>
         <ShowTechnology />
       </main>
-    </Page>
+    </BasePage>
   );
 }
 

@@ -1,17 +1,22 @@
 import Footer from "./footer";
 import Header, { HeaderProps } from "./header";
 
-interface PageProps {
+interface BasePageProps {
   children: React.ReactNode;
   headerProps: HeaderProps;
+  isHome?: true;
 }
 
-export default function Page({ children, headerProps }: PageProps) {
+export default function BasePage({
+  children,
+  headerProps,
+  isHome,
+}: BasePageProps) {
   return (
     <>
       <Header {...headerProps} />
       {children}
-      <Footer />
+      <Footer isHome={isHome} />
     </>
   );
 }
