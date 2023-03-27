@@ -5,7 +5,7 @@ export default function ShowWork() {
   return (
     <>
       {worksItems.map((workItem) => (
-        <div key={workItem.id} className="pb-5">
+        <div key={workItem.id} className="py-6">
           <h2 className="font-bold text-2xl pb-2">{workItem.name}</h2>
           <div className="grid grid-cols-6 gap-4 max-w-4xl">
             {workItem.work.map((item) => (

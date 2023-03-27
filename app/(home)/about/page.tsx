@@ -13,7 +13,7 @@ export default function AboutPage() {
             <div key={item.id} className="flex items-center gap-4 text-">
               {index % 2 === 0 ? (
                 <Image
-                  className="rounded-3xl"
+                  className="rounded-3xl border-2"
                   alt="profile photo"
                   src={item.image}
                   width={160}
@@ -24,7 +24,7 @@ export default function AboutPage() {
               )}
               {index % 2 !== 0 ? (
                 <Image
-                  className="rounded-3xl"
+                  className="rounded-3xl border-2"
                   alt="profile photo"
                   src={item.image}
                   width={160}
